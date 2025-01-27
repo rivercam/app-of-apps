@@ -33,10 +33,10 @@ configure kustomized-helm tool in argocd-cm ConfigMap:
 ```
 
 ```
-argocd app create kustomized-helm \
+argocd app create apps-kustomized-helm \
     --config-management-plugin kustomized-helm \
-    --repo https://github.com/argoproj/argocd-example-apps \
-    --path plugins/kustomized-helm \
+    --repo https://github.com/rivercam/app-of-apps \
+    --path apps-kustomized-helm \
     --dest-server https://kubernetes.default.svc \
     --dest-namespace default
 ```
