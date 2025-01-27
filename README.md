@@ -1,6 +1,21 @@
 # Customizing Upstream Helm Charts with Kustomize
 https://testingclouds.wordpress.com/2018/07/20/844/
 
+
+# ArgoCD Kustomizing Helm charts¶
+It's possible to render Helm charts with Kustomize. Doing so requires that you pass the --enable-helm flag to the kustomize build command.
+This flag is not part of the Kustomize options within Argo CD. If you would like to render Helm charts through Kustomize in an Argo CD application, you have two options:
+You can either create a custom plugin, or modify the argocd-cm ConfigMap to include the --enable-helm flag globally for all Kustomize applications:
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+data:
+  kustomize.buildOptions: --enable-helm
+
 # ArgoCD Example Apps
 
 This repository contains example applications for demoing ArgoCD functionality. Feel free
