@@ -1,3 +1,6 @@
+# Customizing Upstream Helm Charts with Kustomize
+https://testingclouds.wordpress.com/2018/07/20/844/
+
 # ArgoCD Example Apps
 
 This repository contains example applications for demoing ArgoCD functionality. Feel free
