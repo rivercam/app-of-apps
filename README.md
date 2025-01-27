@@ -17,6 +17,29 @@ data:
   kustomize.buildOptions: --enable-helm
 ```
 
+
+# Update ArgoCD Plugin 
+configure kustomized-helm tool in argocd-cm ConfigMap:
+```
+  configManagementPlugins: |
+    - name: kustomized-helm
+      init:
+        command: ["/bin/sh", "-c"]
+        args: ["helm dependency build"]
+      generate:
+        command: ["/bin/sh", "-c"]
+        args: ["helm template . --name-template $ARGOCD_APP_NAME --namespace $ARGOCD_APP_NAMESPACE --kube-version $KUBE_VERSION > all.yaml && kustomize build"]
+
+```
+
+```
+argocd app create kustomized-helm \
+    --config-management-plugin kustomized-helm \
+    --repo https://github.com/argoproj/argocd-example-apps \
+    --path plugins/kustomized-helm \
+    --dest-server https://kubernetes.default.svc \
+    --dest-namespace default
+```
 # ArgoCD Example Apps
 
 This repository contains example applications for demoing ArgoCD functionality. Feel free
