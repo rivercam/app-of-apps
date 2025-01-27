@@ -22,7 +22,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - helm-guestbook.awit.uk
+    - kustomized-helm-guestbook.awit.uk
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
