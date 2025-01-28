@@ -7,6 +7,9 @@ It's possible to render Helm charts with Kustomize. Doing so requires that you p
 This flag is not part of the Kustomize options within Argo CD. If you would like to render Helm charts through Kustomize in an Argo CD application, you have two options:
 You can either create a custom plugin, or modify the argocd-cm ConfigMap to include the --enable-helm flag globally for all Kustomize applications:
 
+https://github.com/argoproj/argo-cd/tree/master/examples/plugins/helm
+https://argo-cd.readthedocs.io/en/stable/operator-manual/config-management-plugins/
+
 ```
 apiVersion: v1
 kind: ConfigMap
