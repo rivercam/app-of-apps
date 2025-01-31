@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bml-01
+type: Opaque
+stringData:
+  username: replaceme
+  password: replaceme
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: bml-vm-01
+  annotations:
+    inspect.metal3.io: disabled
+spec:
+  online: true
+  bootMACAddress: 00:60:2f:31:81:01
+  bootMode: UEFI # use 'legacy' for Scenario 2
+  hardwareProfile: libvirt
+  bmc:
+    address: redfish-virtualmedia+http://192.168.122.1:8000/redfish/v1/Systems/b27e92c6-98d2-4726-b42d-b2584ac2d800
+    credentialsName: bml-01
+    disableCertificateVerification: true
+  image:
+    checksumType: sha256
+    checksum: http://192.168.122.1/SHA256SUMS
+    format: qcow2
+    url: http://192.168.122.1/jammy-server-cloudimg-amd64.img
+  userData:
+    name: user-data
+    namespace: default
+

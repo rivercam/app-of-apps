@@ -1,0 +1,15 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: bml-vm-02
+  annotations:
+    inspect.metal3.io: disabled
+spec:
+  online: true
+  bootMACAddress: 52:54:00:26:fe:37
+  bootMode: UEFI # use 'legacy' for Scenario 2
+  hardwareProfile: libvirt
+  bmc:
+    address: redfish-virtualmedia+http://192.168.122.1:8000/redfish/v1/Systems/bmh-vm-02
+    credentialsName: bml-01
+

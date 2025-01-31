@@ -1,0 +1,6 @@
+#cloud-config
+users:
+- name: john
+  ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAxwdGNI63DUlXy1n4lTn2INsC+aeYBxQ+8XU52kPF2lB9AoSBx0+JmdfB1qevb+Jc3ha0tO/xCa+LS2tqgryxiJAC78+0Fr78KwummBAFVoKV0uppQUi5nd22lUSVp/GUhl1c/Wd8fUOK2QdbqcrKOXRZvIwsHuafFhLPX4kwhWAy0lJAGNNySIPoN22y93D7Nn4P/MgnO/ceEbu9c0fLetmQWYFoYxNFm60nSu19giQpQRvKMXdXKwuJjMzdJoIFJvcVf02U/7uY/F8SY8NswgNKK2H1thoGKR99QXCGYnpcu7nkYmNKLJ3OI+/BfImnWJ8MWi1/M+48MoWihzuYyDov2Z21AQMp0IgMfUuO1gXUwFn5w3p36neKcap+Y+ieGN6wfMUegfba/Cylcup/Cm1kpyIbgrJraEUYMKf+MyK5kZAADCP7Mrp4t206ftFMxrEI6A9jVkRKsdcTipP2H6dlU87Zi/3VkcZj2ZdxL6nyuB5LBE4RLKnko0G25Hc= john@JohnS-Dell
+
